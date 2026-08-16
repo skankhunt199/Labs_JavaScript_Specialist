@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная 1.1</title>
+    <style>
+        body {
+            background-color: #eaeaea;
+        }
+        h1, h2 {
+            color: #333333;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Перевод температуры из градусов Цельсия в градусы Фаренгейта</h1>
+    <h2>
+        <script>
+            "Use strict";
+            let tValueCel = parseFloat(
+                prompt("Введите температуру в градусах Цельсия: ", "100")
+            );
+            let tValueFah = (tValueCel * 9) / 5 + 32;
+            document.write("Температура в градусах Фаренгейта: " + Math.round(tValueFah * 100) / 100 + " °F");
+        </script>
+    </h2>
+</body>
+
+</html>
