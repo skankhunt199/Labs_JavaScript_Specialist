@@ -11,25 +11,42 @@
     <h1>Колличество ворон на ветке:</h1>
     <script>
         "use strict";
+
         let crowsCount = parseInt(prompt("Введите колличество ворон на ветке:"));
-        let firstPartMessage = "На ветке";
-        let secondPartMessage = "ворон";
-        switch (crowsCount) {
-            case 1:
-                secondPartMessage = "ворона";
-                break;
-            case 2:
-            case 3:
-            case 4:
-                secondPartMessage = "вороны";
-                break;
-            default:
-                if(!crowsCount)
-                    crowsCount = "нет";
-                secondPartMessage = "ворон";
+
+        let result = "";
+
+        if (isNaN(crowsCount)) {
+            result = "Вы ввели не число!";
         }
-        console.log(`${firstPartMessage} ${crowsCount} ${secondPartMessage}.`);
-        document.write(`${firstPartMessage} ${crowsCount} ${secondPartMessage}.`);
+        else {
+            let firstPartMessage = "На ветке";
+            let secondPartMessage = "ворон";
+            let lastTwoDigits = crowsCount % 100;
+
+            if (lastTwoDigits >= 11 && lastTwoDigits <= 14) {
+                secondPartMessage = "ворон";
+            }
+            else {
+                switch (crowsCount % 10) {
+                    case 1:
+                        secondPartMessage = "ворона";
+                        break;
+                    case 2:
+                    case 3:
+                    case 4:
+                        secondPartMessage = "вороны";
+                        break;
+                    default:
+                        secondPartMessage = "ворон";
+                }
+            }
+            result = `${firstPartMessage} ${crowsCount} ${secondPartMessage}.`;
+        }
+        
+        console.log(result);
+        document.write(result);
     </script>
 </body>
+
 </html>
