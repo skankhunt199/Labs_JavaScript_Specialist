@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная 2.4</title>
+</head>
+
+<body>
+    <h1>Числа Фибоначчи</h1>
+    <script>
+        "use strict";
+
+        let firstDigit = 1;
+        let secondDigit = 1;
+        let nextDigit = firstDigit + secondDigit;
+
+        document.write(`${firstDigit} ${secondDigit} ${nextDigit}`);
+
+        while (nextDigit < 1000) {  
+            firstDigit = secondDigit;            
+            secondDigit = nextDigit;
+            nextDigit = firstDigit + secondDigit;
+            document.write(` ${nextDigit} `);   
+        }
+    </script>
+</body>
+
+</html>
