@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабраторная 2.2</title>
+</head>
+
+<body>
+    <h1>Колличество ворон на ветке:</h1>
+    <script>
+        "use strict";
+        let crowsCount = parseInt(prompt("Введите колличество ворон на ветке:"));
+        let firstPartMessage = "На ветке";
+        let secondPartMessage = "ворон";
+        switch (crowsCount) {
+            case 1:
+                secondPartMessage = "ворона";
+                break;
+            case 2:
+            case 3:
+            case 4:
+                secondPartMessage = "вороны";
+                break;
+            default:
+                if(!crowsCount)
+                    crowsCount = "нет";
+                secondPartMessage = "ворон";
+        }
+        console.log(`${firstPartMessage} ${crowsCount} ${secondPartMessage}.`);
+        document.write(`${firstPartMessage} ${crowsCount} ${secondPartMessage}.`);
+    </script>
+</body>
+</html>
