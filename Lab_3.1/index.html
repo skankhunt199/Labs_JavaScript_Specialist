@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная 3.1</title>
+</head>
+
+<body>
+    <h1>Функция вычисления наибольшего общего делителя двух целых чисел</h1>
+    <input type="text" id="input-k1" placeholder="Введите число">
+    <input type="text" id="input-k2" placeholder="Введите число">
+    <button onclick="calculateGCD()">Вычислить НОД</button>
+    <p id="result"></p>
+    <script>
+        "use strict";
+
+        function calculateGCD() {
+            let k1 = parseInt(document.getElementById('input-k1').value);
+            let k2 = parseInt(document.getElementById('input-k2').value);
+
+            if (isNaN(k1) || isNaN(k2)) {
+                document.getElementById('result').innerText = 'Введите два целых числа.';
+                return;
+            }
+
+            let k3;
+
+            while ((k3 = k1 % k2) != 0) {                
+                k1 = k2;
+                k2 = k3;
+            }
+
+            document.getElementById('result').innerText = `Наибольший общий делитель: ${k2}`;
+        }
+    </script>
+</body>
+
+</html>
