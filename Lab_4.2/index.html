@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная 4.2</title>
+</head>
+
+<body>
+    <h1>Создание массива имен</h1>
+    <script>
+        "use strict";
+
+        let names = [];
+
+        while ((name = prompt("Введите имя (или оставьте пустым):")) != null && name != "") {
+            names.push(name);
+        }
+        
+        document.write(`${names.length == 0 ? "Массив имен пуст" : names.sort().join(", ")}`);
+    </script>
+</body>
+
+</html>
