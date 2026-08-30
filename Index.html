@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная 5.1</title>
+</head>
+
+<body>
+    <h1>Создание класса: ссылка</h1>
+    <script>
+        "use strict";
+
+        class Link {
+            title;
+            url;
+            constructor(title, url) {
+                this.title = title;
+                this.url = url;
+            }
+            renderLink(openInNewWindows) {
+                return `<a href="${this.url}" target="${openInNewWindows ? '_blank' : '_self'}">${this.title}</a>`;
+            }
+        }
+
+        let linkObj = new Link("Ccылка на сайт", "https://www.example.com");
+
+        document.write(`${linkObj.renderLink(true)} в новом окне`);
+        document.write("<br>");
+        document.write(`${linkObj.renderLink(false)} в текущем окне`);
+    </script>
+</body>
+
+</html>
