@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная 4.1</title>
+</head>
+<body>
+    <h1>Создание объекта: ссылка</h1>
+    <script>
+        "use strict";
+
+        let linkObj = new Object();
+        linkObj.title = "Ccылка на сайт";
+        linkObj.url = "https://www.example.com";
+        linkObj.renderLink = function(openInNewWindows) {
+            return `<a href="${this.url}" target="${openInNewWindows ? '_blank' : '_self'}">${this.title}</a>`;
+        };
+
+        document.write(`${linkObj.renderLink(true)} в новом окне`);
+        document.write("<br>");
+        document.write(`${linkObj.renderLink(false)} в текущем окне`);
+    </script>
+</body>
+</html>
